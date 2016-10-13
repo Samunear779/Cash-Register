@@ -23,6 +23,7 @@ namespace Cash_Register
         double wrapQ;
         double drinkQ;
         double subtotal;
+        double taxA;
 
         public Form1()
         {
@@ -39,15 +40,38 @@ namespace Cash_Register
             try
             {
                 burgerQ = Convert.ToInt32(inputB.Text);
-                friesQ = Convert.ToInt32(inputF);
-                wrapQ = Convert.ToInt32(inputW);
-                drinkQ = Convert.ToInt32(inputD);
+                friesQ = Convert.ToInt32(inputF.Text);
+                wrapQ = Convert.ToInt32(inputW.Text);
+                drinkQ = Convert.ToInt32(inputD.Text);
                 subtotal = burgerQ * BURGER + friesQ * FRIES + wrapQ * WRAP + drinkQ * DRINK;
-                total = subtotal * TAX;
-                outputLabel.Text = "Your subtotal is                      " + subtotal.ToString("C");
+                taxA = subtotal * TAX;
+                total = subtotal + taxA; //hey
+
+
+                outputLabel.Text = "Subtotal                        " + subtotal.ToString("C");
+                outputLabel.Text += "\nTax                          " + taxA.ToString("C");
+                outputLabel.Text += "\nTotal                        " + total.ToString("C");
             }
 
-           
+            catch // display error message if input is not a number 
+            {
+                outputLabel.Text = "You must enter an integer you silly";
+            }
+        }
+
+        private void burger_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

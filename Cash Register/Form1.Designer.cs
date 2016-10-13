@@ -57,17 +57,18 @@
             // 
             this.burger.AutoSize = true;
             this.burger.Font = new System.Drawing.Font("Segoe Script", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.burger.Location = new System.Drawing.Point(63, 111);
+            this.burger.Location = new System.Drawing.Point(63, 117);
             this.burger.Name = "burger";
             this.burger.Size = new System.Drawing.Size(174, 33);
             this.burger.TabIndex = 1;
             this.burger.Text = "Burger..... 2.49";
+            this.burger.Click += new System.EventHandler(this.burger_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe Script", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(63, 177);
+            this.label3.Location = new System.Drawing.Point(63, 150);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(180, 33);
             this.label3.TabIndex = 2;
@@ -77,17 +78,18 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe Script", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(63, 244);
+            this.label4.Location = new System.Drawing.Point(61, 183);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(176, 33);
             this.label4.TabIndex = 3;
             this.label4.Text = "Wrap......... 2.99";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe Script", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(63, 312);
+            this.label5.Location = new System.Drawing.Point(63, 219);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(174, 33);
             this.label5.TabIndex = 4;
@@ -95,28 +97,28 @@
             // 
             // inputB
             // 
-            this.inputB.Location = new System.Drawing.Point(243, 120);
+            this.inputB.Location = new System.Drawing.Point(243, 126);
             this.inputB.Name = "inputB";
             this.inputB.Size = new System.Drawing.Size(39, 20);
             this.inputB.TabIndex = 5;
             // 
             // inputF
             // 
-            this.inputF.Location = new System.Drawing.Point(243, 186);
+            this.inputF.Location = new System.Drawing.Point(243, 159);
             this.inputF.Name = "inputF";
             this.inputF.Size = new System.Drawing.Size(39, 20);
             this.inputF.TabIndex = 6;
             // 
             // inputW
             // 
-            this.inputW.Location = new System.Drawing.Point(243, 257);
+            this.inputW.Location = new System.Drawing.Point(243, 192);
             this.inputW.Name = "inputW";
             this.inputW.Size = new System.Drawing.Size(39, 20);
             this.inputW.TabIndex = 7;
             // 
             // inputD
             // 
-            this.inputD.Location = new System.Drawing.Point(243, 325);
+            this.inputD.Location = new System.Drawing.Point(243, 228);
             this.inputD.Name = "inputD";
             this.inputD.Size = new System.Drawing.Size(39, 20);
             this.inputD.TabIndex = 8;
@@ -127,7 +129,7 @@
             this.print.Name = "print";
             this.print.Size = new System.Drawing.Size(98, 42);
             this.print.TabIndex = 10;
-            this.print.Text = "Print Recept";
+            this.print.Text = "Print Receipt";
             this.print.UseVisualStyleBackColor = true;
             // 
             // newOrder
@@ -143,7 +145,7 @@
             // outputLabel
             // 
             this.outputLabel.AutoSize = true;
-            this.outputLabel.Location = new System.Drawing.Point(24, 373);
+            this.outputLabel.Location = new System.Drawing.Point(28, 276);
             this.outputLabel.Name = "outputLabel";
             this.outputLabel.Size = new System.Drawing.Size(0, 13);
             this.outputLabel.TabIndex = 12;
@@ -162,6 +164,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(749, 484);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.outputLabel);
@@ -178,6 +181,7 @@
             this.Controls.Add(this.title);
             this.Name = "Form1";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
