@@ -62,7 +62,7 @@
             this.burger.Size = new System.Drawing.Size(174, 33);
             this.burger.TabIndex = 1;
             this.burger.Text = "Burger..... 2.49";
-            this.burger.Click += new System.EventHandler(this.burger_Click);
+           
             // 
             // label3
             // 
@@ -83,7 +83,7 @@
             this.label4.Size = new System.Drawing.Size(176, 33);
             this.label4.TabIndex = 3;
             this.label4.Text = "Wrap......... 2.99";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+           
             // 
             // label5
             // 
@@ -131,6 +131,7 @@
             this.print.TabIndex = 10;
             this.print.Text = "Print Receipt";
             this.print.UseVisualStyleBackColor = true;
+            this.print.Click += new System.EventHandler(this.print_Click);
             // 
             // newOrder
             // 
@@ -145,9 +146,10 @@
             // outputLabel
             // 
             this.outputLabel.AutoSize = true;
+            this.outputLabel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outputLabel.Location = new System.Drawing.Point(28, 276);
             this.outputLabel.Name = "outputLabel";
-            this.outputLabel.Size = new System.Drawing.Size(0, 13);
+            this.outputLabel.Size = new System.Drawing.Size(0, 22);
             this.outputLabel.TabIndex = 12;
             // 
             // button1
@@ -181,7 +183,7 @@
             this.Controls.Add(this.title);
             this.Name = "Form1";
             this.Text = "Menu";
-            this.Load += new System.EventHandler(this.Form1_Load);
+  
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -39,18 +39,22 @@ namespace Cash_Register
         {
             try
             {
+                burgerQ = 0;
+                friesQ = 0;
+                wrapQ = 0;
+                drinkQ = 0;
                 burgerQ = Convert.ToInt32(inputB.Text);
                 friesQ = Convert.ToInt32(inputF.Text);
                 wrapQ = Convert.ToInt32(inputW.Text);
                 drinkQ = Convert.ToInt32(inputD.Text);
                 subtotal = burgerQ * BURGER + friesQ * FRIES + wrapQ * WRAP + drinkQ * DRINK;
                 taxA = subtotal * TAX;
-                total = subtotal + taxA; //hey
+                total = subtotal + taxA; 
 
 
-                outputLabel.Text = "Subtotal                        " + subtotal.ToString("C");
-                outputLabel.Text += "\nTax                          " + taxA.ToString("C");
-                outputLabel.Text += "\nTotal                        " + total.ToString("C");
+                outputLabel.Text = "Subtotal                          " + subtotal.ToString("C");
+                outputLabel.Text += "\nTax                                  " + taxA.ToString("C");
+                outputLabel.Text += "\nTotal                               " + total.ToString("C");
             }
 
             catch // display error message if input is not a number 
@@ -59,18 +63,15 @@ namespace Cash_Register
             }
         }
 
-        private void burger_Click(object sender, EventArgs e)
+        private void print_Click(object sender, EventArgs e)
         {
+            Graphics formGraphics = this.CreateGraphics();
+            SolidBrush whiteBrush = new SolidBrush(Color.White);
+            SolidBrush blackBrush = new SolidBrush(Color.Black);
+            Pen blackPen = new Pen(Color.White, 10);
+            Pen whitePen = new Pen(Color.White, 10);
 
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
+            formGraphics.FillRectangle(whiteBrush, 375, 100, 300, 325);
 
         }
     }
