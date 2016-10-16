@@ -46,7 +46,7 @@ namespace Cash_Register
             Pen blackPen = new Pen(Color.White, 10);
             Pen whitePen = new Pen(Color.White, 10);
 
-            formGraphics.FillRectangle(whiteBrush, 375, 100, 300, 335);
+            formGraphics.FillRectangle(whiteBrush, 375, 110, 300, 335);
             Font drawFont = new Font("Courier New", 10, FontStyle.Bold);
 
             //Use Drawstring to print reicpt

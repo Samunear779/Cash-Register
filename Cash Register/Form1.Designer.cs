@@ -196,7 +196,7 @@
             this.zeroLabel.AutoSize = true;
             this.zeroLabel.BackColor = System.Drawing.Color.Transparent;
             this.zeroLabel.Font = new System.Drawing.Font("Segoe Script", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.zeroLabel.Location = new System.Drawing.Point(27, 74);
+            this.zeroLabel.Location = new System.Drawing.Point(27, 75);
             this.zeroLabel.Name = "zeroLabel";
             this.zeroLabel.Size = new System.Drawing.Size(461, 30);
             this.zeroLabel.TabIndex = 17;
