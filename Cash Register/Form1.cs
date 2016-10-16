@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Cash_Register
 {
@@ -50,6 +51,7 @@ namespace Cash_Register
             Font drawFont = new Font("Courier New", 10, FontStyle.Bold);
 
             //Use Drawstring to print reicpt
+            //I couldnt get a sound to save my life 
             formGraphics.DrawString("Sam's Food Fun", drawFont, blackBrush, 470, 110);
             formGraphics.DrawString("Order Number 107", drawFont, blackBrush, 375, 130);
             formGraphics.DrawString("October 13, 2016", drawFont, blackBrush, 375, 150);
