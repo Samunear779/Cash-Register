@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.title = new System.Windows.Forms.Label();
-            this.burger = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.burgerCostLabel = new System.Windows.Forms.Label();
+            this.friesCostLabel = new System.Windows.Forms.Label();
+            this.wrapCostLabel = new System.Windows.Forms.Label();
+            this.drinkCostLabel = new System.Windows.Forms.Label();
             this.inputB = new System.Windows.Forms.TextBox();
             this.inputF = new System.Windows.Forms.TextBox();
             this.inputW = new System.Windows.Forms.TextBox();
@@ -41,7 +42,7 @@
             this.newOrder = new System.Windows.Forms.Button();
             this.outputLabel = new System.Windows.Forms.Label();
             this.calculateTotals = new System.Windows.Forms.Button();
-            this.money = new System.Windows.Forms.Label();
+            this.moneyLabel = new System.Windows.Forms.Label();
             this.givenMoney = new System.Windows.Forms.TextBox();
             this.calculateChange = new System.Windows.Forms.Button();
             this.zeroLabel = new System.Windows.Forms.Label();
@@ -57,45 +58,45 @@
             this.title.TabIndex = 0;
             this.title.Text = "Magnificent Menu";
             // 
-            // burger
+            // burgerCostLabel
             // 
-            this.burger.AutoSize = true;
-            this.burger.Font = new System.Drawing.Font("Segoe Script", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.burger.Location = new System.Drawing.Point(63, 117);
-            this.burger.Name = "burger";
-            this.burger.Size = new System.Drawing.Size(174, 33);
-            this.burger.TabIndex = 1;
-            this.burger.Text = "Burger..... 2.49";
+            this.burgerCostLabel.AutoSize = true;
+            this.burgerCostLabel.Font = new System.Drawing.Font("Segoe Script", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.burgerCostLabel.Location = new System.Drawing.Point(63, 117);
+            this.burgerCostLabel.Name = "burgerCostLabel";
+            this.burgerCostLabel.Size = new System.Drawing.Size(174, 33);
+            this.burgerCostLabel.TabIndex = 1;
+            this.burgerCostLabel.Text = "Burger..... 2.49";
             // 
-            // label3
+            // friesCostLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe Script", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(63, 150);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(180, 33);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Fries........... 1.89";
+            this.friesCostLabel.AutoSize = true;
+            this.friesCostLabel.Font = new System.Drawing.Font("Segoe Script", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.friesCostLabel.Location = new System.Drawing.Point(63, 150);
+            this.friesCostLabel.Name = "friesCostLabel";
+            this.friesCostLabel.Size = new System.Drawing.Size(180, 33);
+            this.friesCostLabel.TabIndex = 2;
+            this.friesCostLabel.Text = "Fries........... 1.89";
             // 
-            // label4
+            // wrapCostLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe Script", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(61, 183);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(176, 33);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Wrap......... 2.99";
+            this.wrapCostLabel.AutoSize = true;
+            this.wrapCostLabel.Font = new System.Drawing.Font("Segoe Script", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wrapCostLabel.Location = new System.Drawing.Point(61, 183);
+            this.wrapCostLabel.Name = "wrapCostLabel";
+            this.wrapCostLabel.Size = new System.Drawing.Size(176, 33);
+            this.wrapCostLabel.TabIndex = 3;
+            this.wrapCostLabel.Text = "Wrap......... 2.99";
             // 
-            // label5
+            // drinkCostLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe Script", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(63, 219);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(174, 33);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Drink...... 0.99";
+            this.drinkCostLabel.AutoSize = true;
+            this.drinkCostLabel.Font = new System.Drawing.Font("Segoe Script", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drinkCostLabel.Location = new System.Drawing.Point(63, 219);
+            this.drinkCostLabel.Name = "drinkCostLabel";
+            this.drinkCostLabel.Size = new System.Drawing.Size(174, 33);
+            this.drinkCostLabel.TabIndex = 4;
+            this.drinkCostLabel.Text = "Drink...... 0.99";
             // 
             // inputB
             // 
@@ -164,15 +165,15 @@
             this.calculateTotals.UseVisualStyleBackColor = true;
             this.calculateTotals.Click += new System.EventHandler(this.calculateTotals_Click);
             // 
-            // money
+            // moneyLabel
             // 
-            this.money.AutoSize = true;
-            this.money.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.money.Location = new System.Drawing.Point(120, 366);
-            this.money.Name = "money";
-            this.money.Size = new System.Drawing.Size(135, 38);
-            this.money.TabIndex = 14;
-            this.money.Text = "Tendered";
+            this.moneyLabel.AutoSize = true;
+            this.moneyLabel.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moneyLabel.Location = new System.Drawing.Point(120, 366);
+            this.moneyLabel.Name = "moneyLabel";
+            this.moneyLabel.Size = new System.Drawing.Size(135, 38);
+            this.moneyLabel.TabIndex = 14;
+            this.moneyLabel.Text = "Tendered";
             // 
             // givenMoney
             // 
@@ -211,7 +212,7 @@
             this.Controls.Add(this.zeroLabel);
             this.Controls.Add(this.calculateChange);
             this.Controls.Add(this.givenMoney);
-            this.Controls.Add(this.money);
+            this.Controls.Add(this.moneyLabel);
             this.Controls.Add(this.calculateTotals);
             this.Controls.Add(this.outputLabel);
             this.Controls.Add(this.newOrder);
@@ -220,11 +221,12 @@
             this.Controls.Add(this.inputW);
             this.Controls.Add(this.inputF);
             this.Controls.Add(this.inputB);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.burger);
+            this.Controls.Add(this.drinkCostLabel);
+            this.Controls.Add(this.wrapCostLabel);
+            this.Controls.Add(this.friesCostLabel);
+            this.Controls.Add(this.burgerCostLabel);
             this.Controls.Add(this.title);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Menu";
             this.ResumeLayout(false);
@@ -235,10 +237,10 @@
         #endregion
 
         private System.Windows.Forms.Label title;
-        private System.Windows.Forms.Label burger;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label burgerCostLabel;
+        private System.Windows.Forms.Label friesCostLabel;
+        private System.Windows.Forms.Label wrapCostLabel;
+        private System.Windows.Forms.Label drinkCostLabel;
         private System.Windows.Forms.TextBox inputB;
         private System.Windows.Forms.TextBox inputF;
         private System.Windows.Forms.TextBox inputW;
@@ -247,7 +249,7 @@
         private System.Windows.Forms.Button newOrder;
         private System.Windows.Forms.Label outputLabel;
         private System.Windows.Forms.Button calculateTotals;
-        private System.Windows.Forms.Label money;
+        private System.Windows.Forms.Label moneyLabel;
         private System.Windows.Forms.TextBox givenMoney;
         private System.Windows.Forms.Button calculateChange;
         private System.Windows.Forms.Label zeroLabel;

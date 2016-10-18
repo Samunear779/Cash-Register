@@ -32,6 +32,10 @@ namespace Cash_Register
         double taxA;
         double tendered;
         double change;
+        double burgerCost;
+        double friesCost;
+        double wrapsCost;
+        double drinkCost;
 
         public Form1()
         {
@@ -49,16 +53,19 @@ namespace Cash_Register
 
             formGraphics.FillRectangle(whiteBrush, 375, 110, 300, 335);
             Font drawFont = new Font("Courier New", 10, FontStyle.Bold);
+            SoundPlayer player = new SoundPlayer(Properties.Resources.CashSound);
+            player.Play();
 
             //Use Drawstring to print reicpt
             //I couldnt get a sound to save my life 
+
             formGraphics.DrawString("Sam's Food Fun", drawFont, blackBrush, 470, 110);
             formGraphics.DrawString("Order Number 107", drawFont, blackBrush, 375, 130);
             formGraphics.DrawString("October 13, 2016", drawFont, blackBrush, 375, 150);
-            formGraphics.DrawString("Burger x " +burgerQ+"................ $"+burgerQ * BURGER, drawFont, blackBrush, 375, 190);
-            formGraphics.DrawString("Fries x " + friesQ + "................. $" + friesQ * FRIES, drawFont, blackBrush, 375, 210);
-            formGraphics.DrawString("Wraps x " + wrapQ + "................. $" + wrapQ * WRAP, drawFont, blackBrush, 375, 230);
-            formGraphics.DrawString("Drink x " + drinkQ + "................. $" + drinkQ * DRINK, drawFont, blackBrush, 375, 250);
+            formGraphics.DrawString("Burger x " +burgerQ+"................ $"+burgerCost, drawFont, blackBrush, 375, 190);
+            formGraphics.DrawString("Fries x " + friesQ + "................. $" + friesCost, drawFont, blackBrush, 375, 210);
+            formGraphics.DrawString("Wraps x " + wrapQ + "................. $" + wrapsCost, drawFont, blackBrush, 375, 230);
+            formGraphics.DrawString("Drink x " + drinkQ + "................. $" + drinkCost, drawFont, blackBrush, 375, 250);
             formGraphics.DrawString("Subtotal ..................$" +subtotal, drawFont, blackBrush, 375, 290);
             formGraphics.DrawString("Tax ...................... " + taxA.ToString("C"), drawFont, blackBrush, 375, 310);
             formGraphics.DrawString("Total .................... " + total.ToString("C"), drawFont, blackBrush, 375, 330);
@@ -71,13 +78,26 @@ namespace Cash_Register
         //resets labels,text boxs, and graohics
         private void newOrder_Click(object sender, EventArgs e)
         {
-            inputB.Text = Convert.ToString(0);
-            inputF.Text = Convert.ToString(0);
-            inputW.Text = Convert.ToString(0);
-            inputD.Text = Convert.ToString(0);
-            givenMoney.Text = Convert.ToString(0);
-            Graphics formGraphics = this.CreateGraphics();
-            formGraphics.Clear(Color.LightSeaGreen);
+           
+            inputB.Text = "0";
+            inputF.Text = "0";
+            inputW.Text = "0";
+            inputD.Text = "0";
+            burgerQ = 0;
+            friesQ = 0;
+            wrapQ = 0;
+            drinkQ = 0;
+            burgerCost = 0;
+            friesCost = 0;
+            wrapsCost = 0;
+            drinkCost = 0;
+            subtotal = 0;
+            taxA = 0;
+            total = 0;
+            tendered = 0;
+            change = 0;
+
+            givenMoney.Text = Convert.ToString(0);          
             outputLabel.Text = "    ";
         }
 
@@ -98,7 +118,11 @@ namespace Cash_Register
                 friesQ = Convert.ToInt32(inputF.Text);
                 wrapQ = Convert.ToInt32(inputW.Text);
                 drinkQ = Convert.ToInt32(inputD.Text);
-
+                burgerCost = BURGER * burgerQ;
+                friesCost = FRIES * friesQ;
+                wrapsCost = WRAP * wrapQ;
+                drinkCost = DRINK * drinkQ;
+ 
                 subtotal = burgerQ * BURGER + friesQ * FRIES + wrapQ * WRAP + drinkQ * DRINK;
                 taxA = TAX * subtotal;
                 total = taxA + subtotal;
